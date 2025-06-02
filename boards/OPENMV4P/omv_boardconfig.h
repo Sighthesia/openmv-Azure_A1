@@ -252,7 +252,7 @@
 
 // Physical SPI buses.
 
-// SPI bus 2
+// SPI bus 2 Disable
 #define OMV_SPI2_ID                           (0)
 #define OMV_SPI2_SCLK_PIN                     (NULL)
 #define OMV_SPI2_MISO_PIN                     (NULL)
