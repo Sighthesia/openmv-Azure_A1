@@ -268,7 +268,7 @@
 #define OMV_SPI3_SCLK_PIN                     (&omv_pin_B3_SPI3)
 #define OMV_SPI3_MISO_PIN                     (&omv_pin_C11_SPI3)
 #define OMV_SPI3_MOSI_PIN                     (&omv_pin_C12_SPI3)
-#define OMV_SPI3_SSEL_PIN                     (&omv_pin_C3)
+#define OMV_SPI3_SSEL_PIN                     (&omv_pin_C3_GPIO)
 #define OMV_SPI3_DMA_TX_CHANNEL               (DMA1_Stream7)
 #define OMV_SPI3_DMA_TX_REQUEST               (DMA_REQUEST_SPI3_TX)
 #define OMV_SPI3_DMA_RX_CHANNEL               (DMA1_Stream2)
