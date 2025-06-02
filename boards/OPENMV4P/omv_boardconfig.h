@@ -168,7 +168,7 @@
 
 // ROMFS configuration.
 #define OMV_ROMFS_PART0_ORIGIN                0x91800000
-#define OMV_ROMFS_PART0_LENGTH                8M
+#define OMV_ROMFS_PART0_LENGTH                (8 * 1024 * 1024) // 8MB
 
 // MDMA configuration
 #define OMV_MDMA_CHANNEL_DCMI_0               (0)
@@ -195,19 +195,19 @@
 #define OMV_FIR_I2C_SPEED                     (OMV_I2C_SPEED_FULL)
 
 // Soft I2C bus.
-#define OMV_SOFT_I2C_SIOC_PIN                 (&omv_pin_B10_GPIO)
-#define OMV_SOFT_I2C_SIOD_PIN                 (&omv_pin_B11_GPIO)
+#define OMV_SOFT_I2C_SIOC_PIN                 (&omv_pin_B10_GPIO) # G030
+#define OMV_SOFT_I2C_SIOD_PIN                 (&omv_pin_B11_GPIO) # G030
 #define OMV_SOFT_I2C_SPIN_DELAY               64
 
 // FIR SPI bus
 #define OMV_CSI_SPI_ID                        (3)
 
 // WINC1500 WiFi module SPI bus
-#define OMV_WINC_SPI_ID                       (2)
-#define OMV_WINC_SPI_BAUDRATE                 (40000000)
-#define OMV_WINC_EN_PIN                       (&omv_pin_A5_GPIO)
-#define OMV_WINC_RST_PIN                      (&omv_pin_D12_GPIO)
-#define OMV_WINC_IRQ_PIN                      (&omv_pin_D13_GPIO)
+#define OMV_WINC_SPI_ID                       (0)
+#define OMV_WINC_SPI_BAUDRATE                 (0)
+#define OMV_WINC_EN_PIN                       (NULL)
+#define OMV_WINC_RST_PIN                      (NULL)
+#define OMV_WINC_IRQ_PIN                      (NULL)
 
 // Camera Interface
 #define OMV_CSI_CLK_SOURCE                    (OMV_CSI_CLK_SOURCE_TIM)
@@ -253,37 +253,37 @@
 // Physical SPI buses.
 
 // SPI bus 2
-#define OMV_SPI2_ID                           (2)
-#define OMV_SPI2_SCLK_PIN                     (&omv_pin_B13_SPI2)
-#define OMV_SPI2_MISO_PIN                     (&omv_pin_B14_SPI2)
-#define OMV_SPI2_MOSI_PIN                     (&omv_pin_B15_SPI2)
-#define OMV_SPI2_SSEL_PIN                     (&omv_pin_B12_SPI2)
-#define OMV_SPI2_DMA_TX_CHANNEL               (DMA1_Stream4)
-#define OMV_SPI2_DMA_TX_REQUEST               (DMA_REQUEST_SPI2_TX)
-#define OMV_SPI2_DMA_RX_CHANNEL               (DMA1_Stream3)
-#define OMV_SPI2_DMA_RX_REQUEST               (DMA_REQUEST_SPI2_RX)
+#define OMV_SPI2_ID                           (0)
+#define OMV_SPI2_SCLK_PIN                     (NULL)
+#define OMV_SPI2_MISO_PIN                     (NULL)
+#define OMV_SPI2_MOSI_PIN                     (NULL)
+#define OMV_SPI2_SSEL_PIN                     (NULL)
+#define OMV_SPI2_DMA_TX_CHANNEL               (NULL)
+#define OMV_SPI2_DMA_TX_REQUEST               (0)
+#define OMV_SPI2_DMA_RX_CHANNEL               (NULL)
+#define OMV_SPI2_DMA_RX_REQUEST               (0)
 
 // SPI bus 3
 #define OMV_SPI3_ID                           (3)
 #define OMV_SPI3_SCLK_PIN                     (&omv_pin_B3_SPI3)
-#define OMV_SPI3_MISO_PIN                     (&omv_pin_B4_SPI3)
-#define OMV_SPI3_MOSI_PIN                     (&omv_pin_B5_SPI3)
-#define OMV_SPI3_SSEL_PIN                     (&omv_pin_A15_SPI3)
+#define OMV_SPI3_MISO_PIN                     (&omv_pin_C11_SPI3)
+#define OMV_SPI3_MOSI_PIN                     (&omv_pin_C12_SPI3)
+#define OMV_SPI3_SSEL_PIN                     (&omv_pin_C3_SPI3)
 #define OMV_SPI3_DMA_TX_CHANNEL               (DMA1_Stream7)
 #define OMV_SPI3_DMA_TX_REQUEST               (DMA_REQUEST_SPI3_TX)
 #define OMV_SPI3_DMA_RX_CHANNEL               (DMA1_Stream2)
 #define OMV_SPI3_DMA_RX_REQUEST               (DMA_REQUEST_SPI3_RX)
 
 // SPI LCD Interface
-#define OMV_SPI_DISPLAY_CONTROLLER            (OMV_SPI2_ID)
-#define OMV_SPI_DISPLAY_MOSI_PIN              (&omv_pin_B15_SPI2)
-#define OMV_SPI_DISPLAY_MISO_PIN              (&omv_pin_B14_SPI2)
-#define OMV_SPI_DISPLAY_SCLK_PIN              (&omv_pin_B13_SPI2)
-#define OMV_SPI_DISPLAY_SSEL_PIN              (&omv_pin_B12_GPIO)
+#define OMV_SPI_DISPLAY_CONTROLLER            (1) // SPI1
+#define OMV_SPI_DISPLAY_MOSI_PIN              (&omv_pin_A7_SPI1)
+#define OMV_SPI_DISPLAY_MISO_PIN              (&omv_pin_D12_GPIO)
+#define OMV_SPI_DISPLAY_SCLK_PIN              (&omv_pin_A5_SPI1)
+#define OMV_SPI_DISPLAY_SSEL_PIN              (&omv_pin_A15_GPIO)
 
-#define OMV_SPI_DISPLAY_RS_PIN                (&omv_pin_D13_GPIO)
+#define OMV_SPI_DISPLAY_RS_PIN                (&omv_pin_D2_GPIO)
 #define OMV_SPI_DISPLAY_RST_PIN               (&omv_pin_D12_GPIO)
-#define OMV_SPI_DISPLAY_BL_PIN                (&omv_pin_A5_GPIO)
+#define OMV_SPI_DISPLAY_BL_PIN                (&omv_pin_D10_GPIO)
 #define OMV_SPI_DISPLAY_TRIPLE_BUFFER         (1)
 
 // FIR Lepton
