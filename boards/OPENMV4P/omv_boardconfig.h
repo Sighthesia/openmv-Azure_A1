@@ -195,8 +195,8 @@
 #define OMV_FIR_I2C_SPEED                     (OMV_I2C_SPEED_FULL)
 
 // Soft I2C bus.
-#define OMV_SOFT_I2C_SIOC_PIN                 (&omv_pin_B10_GPIO) # G030
-#define OMV_SOFT_I2C_SIOD_PIN                 (&omv_pin_B11_GPIO) # G030
+#define OMV_SOFT_I2C_SIOC_PIN                 (&omv_pin_B10_GPIO) // G030
+#define OMV_SOFT_I2C_SIOD_PIN                 (&omv_pin_B11_GPIO) // G030
 #define OMV_SOFT_I2C_SPIN_DELAY               64
 
 // FIR SPI bus
