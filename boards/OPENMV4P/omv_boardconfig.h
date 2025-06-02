@@ -277,12 +277,12 @@
 // SPI LCD Interface
 #define OMV_SPI_DISPLAY_CONTROLLER            (1) // SPI1
 #define OMV_SPI_DISPLAY_MOSI_PIN              (&omv_pin_A7_SPI1)
-#define OMV_SPI_DISPLAY_MISO_PIN              (&omv_pin_D12_GPIO)
+#define OMV_SPI_DISPLAY_MISO_PIN              (NULL)
 #define OMV_SPI_DISPLAY_SCLK_PIN              (&omv_pin_A5_SPI1)
 #define OMV_SPI_DISPLAY_SSEL_PIN              (&omv_pin_A15_GPIO)
 
 #define OMV_SPI_DISPLAY_RS_PIN                (&omv_pin_D2_GPIO)
-#define OMV_SPI_DISPLAY_RST_PIN               (&omv_pin_D12_GPIO)
+#define OMV_SPI_DISPLAY_RST_PIN               (NULL)
 #define OMV_SPI_DISPLAY_BL_PIN                (&omv_pin_D10_GPIO)
 #define OMV_SPI_DISPLAY_TRIPLE_BUFFER         (1)
 
