@@ -47,18 +47,18 @@
 #define OMV_OV9650_ENABLE (1)
 #define OMV_MT9M114_ENABLE (1)
 #define OMV_MT9V0XX_ENABLE (1)
-#define OMV_LEPTON_ENABLE (1)
+#define OMV_LEPTON_ENABLE (0)
 #define OMV_PAG7920_ENABLE (1)
 #define OMV_PAJ6100_ENABLE (1)
 #define OMV_FROGEYE2020_ENABLE (1)
 #define OMV_GENX320_EHC_ENABLE (1)
 
-// FIR drivers configuration.
-#define OMV_FIR_MLX90621_ENABLE (1)
-#define OMV_FIR_MLX90640_ENABLE (1)
-#define OMV_FIR_MLX90641_ENABLE (1)
-#define OMV_FIR_AMG8833_ENABLE (1)
-#define OMV_FIR_LEPTON_ENABLE (1)
+// // FIR drivers configuration.
+// #define OMV_FIR_MLX90621_ENABLE (1)
+// #define OMV_FIR_MLX90640_ENABLE (1)
+// #define OMV_FIR_MLX90641_ENABLE (1)
+// #define OMV_FIR_AMG8833_ENABLE (1)
+// #define OMV_FIR_LEPTON_ENABLE (1)
 
 // UMM heap block size
 #define OMV_UMM_BLOCK_SIZE 256
@@ -248,12 +248,12 @@
 #define OMV_CSI_D6_PIN (&omv_pin_D3_DCMI) // OV Y7
 #define OMV_CSI_D7_PIN (&omv_pin_E6_DCMI) // OV Y9
 
-#define OMV_CSI_HSYNC_PIN (&omv_pin_A4_DCMI)  // OV HREF
-#define OMV_CSI_VSYNC_PIN (&omv_pin_B7_DCMI)  // OMV_CSI_VSYNC_PIN
-#define OMV_CSI_PXCLK_PIN (&omv_pin_A6_DCMI)  // OV PCLK
-#define OMV_CSI_RESET_PIN (&omv_pin_RST_GPIO) // OV RST (NRST)
-#define OMV_CSI_POWER_PIN (&omv_pin_E3_GPIO)  // OV PWDBN
-#define OMV_CSI_FSYNC_PIN (&omv_pin_C0_GPIO)  // STROBE
+#define OMV_CSI_HSYNC_PIN (&omv_pin_A4_DCMI) // OV HREF
+#define OMV_CSI_VSYNC_PIN (&omv_pin_B7_DCMI) // OMV_CSI_VSYNC_PIN
+#define OMV_CSI_PXCLK_PIN (&omv_pin_A6_DCMI) // OV PCLK
+#define OMV_CSI_RESET_PIN NULL               // OV RST (NRST)
+#define OMV_CSI_POWER_PIN (&omv_pin_E3_GPIO) // OV PWDBN
+#define OMV_CSI_FSYNC_PIN (&omv_pin_C0_GPIO) // STROBE
 
 // Physical I2C buses.
 
@@ -296,7 +296,7 @@
 #define OMV_SPI3_SCLK_PIN (&omv_pin_B3_SPI3)
 #define OMV_SPI3_MISO_PIN (&omv_pin_C11_SPI3) // SPI3 MISO
 #define OMV_SPI3_MOSI_PIN (&omv_pin_C12_SPI3) // SPI3 MOSI
-#define OMV_SPI3_SSEL_PIN (&omv_pin_C3_SPI3)  // SPI3 CS
+#define OMV_SPI3_SSEL_PIN (&omv_pin_C3_GPIO)  // SPI3 CS
 #define OMV_SPI3_DMA_TX_CHANNEL (DMA1_Stream7)
 #define OMV_SPI3_DMA_TX_REQUEST (DMA_REQUEST_SPI3_TX)
 #define OMV_SPI3_DMA_RX_CHANNEL (DMA1_Stream2)
@@ -316,14 +316,23 @@
 
 // SPI LCD Interface - 更新为实际的LCD引脚
 #define OMV_SPI1_ID (1)
+#define OMV_SPI1_SCLK_PIN (&omv_pin_A5_SPI1)  // LCD SCL
+#define OMV_SPI1_MISO_PIN (&omv_pin_A6_SPI1)  // LCD MISO
+#define OMV_SPI1_MOSI_PIN (&omv_pin_A7_SPI1)  // LCD SDA (MOSI)
+#define OMV_SPI1_SSEL_PIN (&omv_pin_A15_SPI1) // LCD CS
+#define OMV_SPI1_DMA_TX_CHANNEL (DMA2_Stream3)
+#define OMV_SPI1_DMA_TX_REQUEST (DMA_REQUEST_SPI1_TX)
+#define OMV_SPI1_DMA_RX_CHANNEL (DMA2_Stream2)
+#define OMV_SPI1_DMA_RX_REQUEST (DMA_REQUEST_SPI1_RX)
+
 #define OMV_SPI_DISPLAY_CONTROLLER (OMV_SPI1_ID)
 #define OMV_SPI_DISPLAY_MOSI_PIN (&omv_pin_A7_SPI1) // LCD SDA
 #define OMV_SPI_DISPLAY_MISO_PIN (&omv_pin_A6_SPI1)
 #define OMV_SPI_DISPLAY_SCLK_PIN (&omv_pin_A5_SPI1)  // LCD SCL
-#define OMV_SPI_DISPLAY_SSEL_PIN (&omv_pin_A15_GPIO) // LCD CS
+#define OMV_SPI_DISPLAY_SSEL_PIN (&omv_pin_A15_SPI1) // LCD CS
 
 #define OMV_SPI_DISPLAY_RS_PIN (&omv_pin_D2_GPIO)  // LCD DC
-#define OMV_SPI_DISPLAY_RST_PIN null               // LCD RES (NRST)
+#define OMV_SPI_DISPLAY_RST_PIN NULL               // LCD RES (NRST)
 #define OMV_SPI_DISPLAY_BL_PIN (&omv_pin_D10_GPIO) // LCD BL
 
 // // QSPI Flash Configuration - 更新为实际的QSPI引脚
