@@ -315,6 +315,7 @@
 // #define OMV_SPI_DISPLAY_TRIPLE_BUFFER         (1)
 
 // SPI LCD Interface - 更新为实际的LCD引脚
+#define OMV_SPI1_ID (1)
 #define OMV_SPI_DISPLAY_CONTROLLER (OMV_SPI1_ID)
 #define OMV_SPI_DISPLAY_MOSI_PIN (&omv_pin_A7_SPI1) // LCD SDA
 #define OMV_SPI_DISPLAY_MISO_PIN (&omv_pin_A6_SPI1)
@@ -322,7 +323,7 @@
 #define OMV_SPI_DISPLAY_SSEL_PIN (&omv_pin_A15_GPIO) // LCD CS
 
 #define OMV_SPI_DISPLAY_RS_PIN (&omv_pin_D2_GPIO)  // LCD DC
-#define OMV_SPI_DISPLAY_RST_PIN (null)             // LCD RES (NRST)
+#define OMV_SPI_DISPLAY_RST_PIN null               // LCD RES (NRST)
 #define OMV_SPI_DISPLAY_BL_PIN (&omv_pin_D10_GPIO) // LCD BL
 
 // // QSPI Flash Configuration - 更新为实际的QSPI引脚
