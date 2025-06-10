@@ -66,32 +66,62 @@
 // USB IRQn.
 #define OMV_USB_IRQN (OTG_FS_IRQn)
 
-// PLL1 48MHz for USB, SDMMC and FDCAN
-#define OMV_OSC_PLL1M (3)
-#define OMV_OSC_PLL1N (240)
-#define OMV_OSC_PLL1P (2)
-#define OMV_OSC_PLL1Q (20)
-#define OMV_OSC_PLL1R (2)
+// // PLL1 48MHz for USB, SDMMC and FDCAN
+// #define OMV_OSC_PLL1M (3)
+// #define OMV_OSC_PLL1N (240)
+// #define OMV_OSC_PLL1P (2)
+// #define OMV_OSC_PLL1Q (20)
+// #define OMV_OSC_PLL1R (2)
+// #define OMV_OSC_PLL1VCI (RCC_PLL1VCIRANGE_2)
+// #define OMV_OSC_PLL1VCO (RCC_PLL1VCOWIDE)
+// #define OMV_OSC_PLL1FRAC (0)
+
+// // PLL2 200MHz for FMC and QSPI.
+// #define OMV_OSC_PLL2M (3)
+// #define OMV_OSC_PLL2N (100)
+// #define OMV_OSC_PLL2P (2)
+// #define OMV_OSC_PLL2Q (2)
+// #define OMV_OSC_PLL2R (2)
+// #define OMV_OSC_PLL2VCI (RCC_PLL2VCIRANGE_2)
+// #define OMV_OSC_PLL2VCO (RCC_PLL2VCOWIDE)
+// #define OMV_OSC_PLL2FRAC (0)
+
+// // PLL3 160MHz for ADC and SPI123
+// #define OMV_OSC_PLL3M (3)
+// #define OMV_OSC_PLL3N (80)
+// #define OMV_OSC_PLL3P (2)
+// #define OMV_OSC_PLL3Q (2)
+// #define OMV_OSC_PLL3R (2)
+// #define OMV_OSC_PLL3VCI (RCC_PLL3VCIRANGE_2)
+// #define OMV_OSC_PLL3VCO (RCC_PLL3VCOWIDE)
+// #define OMV_OSC_PLL3FRAC (0)
+
+// PLL1 配置 - 添加缺少的参数
+#define OMV_OSC_PLL1M (5)   // 25MHz / 5 = 5MHz
+#define OMV_OSC_PLL1N (192) // 5MHz * 192 = 960MHz
+#define OMV_OSC_PLL1P (2)   // 960MHz / 2 = 480MHz
+#define OMV_OSC_PLL1Q (20)  // 960MHz / 20 = 48MHz (USB)
+#define OMV_OSC_PLL1R (2)   // 960MHz / 2 = 480MHz
 #define OMV_OSC_PLL1VCI (RCC_PLL1VCIRANGE_2)
 #define OMV_OSC_PLL1VCO (RCC_PLL1VCOWIDE)
 #define OMV_OSC_PLL1FRAC (0)
 
-// PLL2 200MHz for FMC and QSPI.
-#define OMV_OSC_PLL2M (3)
-#define OMV_OSC_PLL2N (100)
-#define OMV_OSC_PLL2P (2)
-#define OMV_OSC_PLL2Q (2)
-#define OMV_OSC_PLL2R (2)
+// 修改 PLL2 配置 - 添加完整参数
+#define OMV_OSC_PLL2M (5)  // 25MHz / 5 = 5MHz
+#define OMV_OSC_PLL2N (80) // 5MHz * 80 = 400MHz
+#define OMV_OSC_PLL2P (2)  // 400MHz / 2 = 200MHz
+#define OMV_OSC_PLL2Q (2)  // 400MHz / 2 = 200MHz
+#define OMV_OSC_PLL2R (2)  // 400MHz / 2 = 200MHz
 #define OMV_OSC_PLL2VCI (RCC_PLL2VCIRANGE_2)
 #define OMV_OSC_PLL2VCO (RCC_PLL2VCOWIDE)
 #define OMV_OSC_PLL2FRAC (0)
 
-// PLL3 160MHz for ADC and SPI123
-#define OMV_OSC_PLL3M (3)
-#define OMV_OSC_PLL3N (80)
-#define OMV_OSC_PLL3P (2)
-#define OMV_OSC_PLL3Q (2)
-#define OMV_OSC_PLL3R (2)
+// 修改 PLL3 配置 - 添加完整参数
+#define OMV_OSC_PLL3M (5)  // 25MHz / 5 = 5MHz
+#define OMV_OSC_PLL3N (64) // 5MHz * 64 = 320MHz
+#define OMV_OSC_PLL3P (2)  // 320MHz / 2 = 160MHz
+#define OMV_OSC_PLL3Q (2)  // 320MHz / 2 = 160MHz
+#define OMV_OSC_PLL3R (2)  // 320MHz / 2 = 160MHz
 #define OMV_OSC_PLL3VCI (RCC_PLL3VCIRANGE_2)
 #define OMV_OSC_PLL3VCO (RCC_PLL3VCOWIDE)
 #define OMV_OSC_PLL3FRAC (0)
@@ -119,9 +149,9 @@
 #define OMV_MAIN_MEMORY SRAM1 // Data/BSS memory
 #define OMV_STACK_MEMORY ITCM // stack memory
 #define OMV_STACK_SIZE (64K)
-#define OMV_FB_MEMORY DRAM          // Framebuffer, fb_alloc
-#define OMV_FB_SIZE (16M)           // FB memory: header + VGA/GS image
-#define OMV_FB_ALLOC_SIZE (11M)     // minimum fb alloc size
+#define OMV_FB_MEMORY DRAM // Framebuffer, fb_alloc
+// #define OMV_FB_SIZE (16M)           // FB memory: header + VGA/GS image
+// #define OMV_FB_ALLOC_SIZE (11M)     // minimum fb alloc size
 #define OMV_FB_OVERLAY_MEMORY SRAM0 // Fast fb_alloc memory.
 #define OMV_FB_OVERLAY_SIZE (496K)  // Fast fb_alloc memory size.
 #define OMV_JPEG_MEMORY DRAM        // JPEG buffer memory buffer.
@@ -136,9 +166,37 @@
 #define OMV_GC_BLOCK0_SIZE (239K)
 #define OMV_GC_BLOCK1_MEMORY DRAM // Extra GC block 0.
 #define OMV_GC_BLOCK1_SIZE (4M)
-#define OMV_MSC_BUF_SIZE (2K)             // USB MSC bot data
+// #define OMV_MSC_BUF_SIZE (2K)             // USB MSC bot data
 #define OMV_SDRAM_SIZE (32 * 1024 * 1024) // This needs to be here for UVC firmware.
-#define OMV_LINE_BUF_SIZE (11 * 1024)     // Image line buffer round(2592 * 2BPP * 2 buffers).
+// #define OMV_LINE_BUF_SIZE (11 * 1024)     // Image line buffer round(2592 * 2BPP * 2 buffers).
+
+// 调整为更合理的内存大小
+#define OMV_FB_SIZE (400K)      // 帧缓冲大小
+#define OMV_FB_ALLOC_SIZE (96K) // fb_alloc大小
+#define OMV_STACK_SIZE (64K)    // 堆栈大小
+#define OMV_HEAP_SIZE (242K)    // 堆大小
+
+// 调整缓冲区大小
+#define OMV_LINE_BUF_SIZE (3 * 1024)  // 3KB行缓冲
+#define OMV_MSC_BUF_SIZE (12K)        // 12KB MSC缓冲
+#define OMV_JPEG_BUF_SIZE (32 * 1024) // 32KB JPEG缓冲
+
+// 添加UMM配置
+// #define OMV_UMM_BLOCK_SIZE 16
+
+// 添加自测试配置
+#define OMV_ENABLE_SELFTEST (1)
+
+// 添加核心电压配置
+#define OMV_CORE_VBAT "3.3"
+
+// 添加原始缓冲区大小
+#define OMV_RAW_BUF_SIZE (409600)
+
+// 添加JPEG质量配置
+#define JPEG_QUALITY_THRESH (320 * 240 * 2)
+#define JPEG_QUALITY_LOW 50
+#define JPEG_QUALITY_HIGH 90
 
 // Memory map.
 #define OMV_FLASH_ORIGIN 0x08000000
@@ -317,7 +375,7 @@
 // SPI LCD Interface - 更新为实际的LCD引脚
 #define OMV_SPI1_ID (1)
 #define OMV_SPI1_SCLK_PIN (&omv_pin_A5_SPI1)  // LCD SCL
-#define OMV_SPI1_MISO_PIN (&omv_pin_A6_SPI1)  // LCD MISO
+#define OMV_SPI1_MISO_PIN (&omv_pin_B4_SPI1)  // LCD MISO
 #define OMV_SPI1_MOSI_PIN (&omv_pin_A7_SPI1)  // LCD SDA (MOSI)
 #define OMV_SPI1_SSEL_PIN (&omv_pin_A15_SPI1) // LCD CS
 #define OMV_SPI1_DMA_TX_CHANNEL (DMA2_Stream3)
