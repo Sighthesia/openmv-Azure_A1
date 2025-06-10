@@ -281,11 +281,22 @@
 #define OMV_SPI2_DMA_RX_REQUEST (DMA_REQUEST_SPI2_RX)
 
 // SPI bus 3
+// #define OMV_SPI3_ID (3)
+// #define OMV_SPI3_SCLK_PIN (&omv_pin_B3_SPI3)
+// #define OMV_SPI3_MISO_PIN (&omv_pin_B4_SPI3)
+// #define OMV_SPI3_MOSI_PIN (&omv_pin_B5_SPI3)
+// #define OMV_SPI3_SSEL_PIN (&omv_pin_A15_SPI3)
+// #define OMV_SPI3_DMA_TX_CHANNEL (DMA1_Stream7)
+// #define OMV_SPI3_DMA_TX_REQUEST (DMA_REQUEST_SPI3_TX)
+// #define OMV_SPI3_DMA_RX_CHANNEL (DMA1_Stream2)
+// #define OMV_SPI3_DMA_RX_REQUEST (DMA_REQUEST_SPI3_RX)
+
+/* ----------------------------- 修改过的 SPI bus 3 ----------------------------- */
 #define OMV_SPI3_ID (3)
 #define OMV_SPI3_SCLK_PIN (&omv_pin_B3_SPI3)
-#define OMV_SPI3_MISO_PIN (&omv_pin_B4_SPI3)
-#define OMV_SPI3_MOSI_PIN (&omv_pin_B5_SPI3)
-#define OMV_SPI3_SSEL_PIN (&omv_pin_A15_SPI3)
+#define OMV_SPI3_MISO_PIN (&omv_pin_C11_SPI3) // SPI3 MISO
+#define OMV_SPI3_MOSI_PIN (&omv_pin_C12_SPI3) // SPI3 MOSI
+#define OMV_SPI3_SSEL_PIN (&omv_pin_C3_SPI3)  // SPI3 CS
 #define OMV_SPI3_DMA_TX_CHANNEL (DMA1_Stream7)
 #define OMV_SPI3_DMA_TX_REQUEST (DMA_REQUEST_SPI3_TX)
 #define OMV_SPI3_DMA_RX_CHANNEL (DMA1_Stream2)
