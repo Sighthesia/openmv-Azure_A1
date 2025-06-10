@@ -21,7 +21,7 @@
 #define IMLIB_ENABLE_LAB_LUT
 
 // Enable YUV LUT
-//#define IMLIB_ENABLE_YUV_LUT
+// #define IMLIB_ENABLE_YUV_LUT
 
 // Enable ISP ops
 #define IMLIB_ENABLE_ISP_OPS
@@ -142,5 +142,15 @@
 
 // Stereo Imaging
 // #define IMLIB_ENABLE_STEREO_DISPARITY
+
+/* ---------------------------------- 新增部分 ---------------------------------- */
+
+// Enable Tensor Flow
+#if !defined(CUBEAI)
+#define IMLIB_ENABLE_TF
+#endif
+
+// Enable STM32 DMA2D
+#define IMLIB_ENABLE_DMA2D
 
 #endif //__IMLIB_CONFIG_H__
