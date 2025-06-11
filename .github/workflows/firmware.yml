@@ -6,7 +6,7 @@ on:
       - 'v*.*.*'
     branches:    
       - 'master'
-      - 'STM32'
+      - 'openmv4p'
     paths:
       - '**'
       - '.github/workflows/*.yml'
