@@ -26,14 +26,14 @@ on:
 
 jobs:
   build-firmware:
-    runs-on: ubuntu-20.04
+    runs-on: ubuntu-22.04
     strategy:
       matrix:
         target: [WeActStudioSTM32H7xx]
       fail-fast: false
     steps:
     - name: '⏳ Checkout repository'
-      uses: actions/checkout@v3
+      uses: actions/checkout@v4
       with:
         submodules: false
 
@@ -41,7 +41,7 @@ jobs:
       run: source tools/ci.sh && ci_update_submodules
 
     - name: '♻ Caching dependencies'
-      uses: actions/cache@v3.2.3
+      uses: actions/cache@v4
       id: cache
       with:
         path: ~/cache/gcc
@@ -56,7 +56,7 @@ jobs:
 
     - name: '⬆ Upload artifacts'
       if: github.event_name != 'pull_request'
-      uses: actions/upload-artifact@v3
+      uses: actions/upload-artifact@v4
       with:
         name: firmware
         path: firmware
@@ -64,16 +64,16 @@ jobs:
 
   stable-release:
     needs: build-firmware
-    runs-on: ubuntu-20.04
+    runs-on: ubuntu-22.04
     if: github.event_name == 'push' && startsWith(github.ref, 'refs/tags/v')
     steps:
     - name: '⏳ Checkout repository'
-      uses: actions/checkout@v3
+      uses: actions/checkout@v4
       with:
         submodules: false
 
     - name: '🤌 Download artifacts'
-      uses: actions/download-artifact@v3
+      uses: actions/download-artifact@v4
       with:
         name: firmware
         path: firmware
@@ -107,18 +107,18 @@ jobs:
 
   development-release:
     needs: build-firmware
-    runs-on: ubuntu-20.04
+    runs-on: ubuntu-22.04
     if: github.event_name == 'push' && startsWith(github.ref, 'refs/tags/v') == false
     permissions:
       contents: write
     steps:
     - name: '⏳ Checkout repository'
-      uses: actions/checkout@v3
+      uses: actions/checkout@v4
       with:
         submodules: false
 
     - name: '🤌 Download artifacts'
-      uses: actions/download-artifact@v3
+      uses: actions/download-artifact@v4
       with:
         name: firmware
         path: firmware
