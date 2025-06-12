@@ -14,9 +14,9 @@
 // Bootloader version.
 #define OMV_BOOT_VERSION (0xABCD0003)
 
-// Bootloader LED GPIO config.
-#define OMV_BOOT_LED_PIN (GPIO_PIN_3)
-#define OMV_BOOT_LED_PORT (GPIOE)
+// // Bootloader LED GPIO config.
+// #define OMV_BOOT_LED_PIN (GPIO_PIN_3)
+// #define OMV_BOOT_LED_PORT (GPIOE)
 
 // Flash layout for the bootloader.
 // Flash FS sector, main FW sector, max sector.
@@ -27,3 +27,9 @@
 #define OMV_BOOT_FLASH_LENGTH 128K
 
 #endif //__OMV_BOOTCONFIG_H__
+
+/* ---------------------------------- 自定义部分 --------------------------------- */
+
+// Bootloader LED GPIO config.
+#define OMV_BOOT_LED_PIN (GPIO_PIN_13)
+#define OMV_BOOT_LED_PORT (GPIOC)
