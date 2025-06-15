@@ -255,12 +255,12 @@
 #define OMV_CSI_D6_PIN (&omv_pin_E5_DCMI) // OV Y8
 #define OMV_CSI_D7_PIN (&omv_pin_E6_DCMI) // OV Y9
 
-#define OMV_CSI_HSYNC_PIN (&omv_pin_A4_DCMI)  // OV HREF
-#define OMV_CSI_VSYNC_PIN (&omv_pin_B7_DCMI)  // OV VSYNC
-#define OMV_CSI_PXCLK_PIN (&omv_pin_A6_DCMI)  // OV PCLK
-#define OMV_CSI_RESET_PIN (&omv_pin_A10_GPIO) // 保持原有配置（硬件重置）
-#define OMV_CSI_POWER_PIN (&omv_pin_E3_GPIO)  // OV PWDN
-#define OMV_CSI_FSYNC_PIN (&omv_pin_C0_GPIO)  // STROBE
+#define OMV_CSI_HSYNC_PIN (&omv_pin_A4_DCMI) // OV HREF
+#define OMV_CSI_VSYNC_PIN (&omv_pin_B7_DCMI) // OV VSYNC
+#define OMV_CSI_PXCLK_PIN (&omv_pin_A6_DCMI) // OV PCLK
+#define OMV_CSI_RESET_PIN (&omv_pin_C4_GPIO) // OV RESET
+#define OMV_CSI_POWER_PIN (&omv_pin_E3_GPIO) // OV PWDN
+#define OMV_CSI_FSYNC_PIN (&omv_pin_C0_GPIO) // STROBE
 
 // Physical I2C buses.
 
