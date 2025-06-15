@@ -186,8 +186,13 @@
 #define OMV_AXI_QOS_MDMA_R_PRI 15 // Max pri to move data.
 #define OMV_AXI_QOS_MDMA_W_PRI 15 // Max pri to move data.
 
-// CSI I2C bus
-#define OMV_CSI_I2C_ID (1)
+// 原有CSI I2C配置（注释掉）
+// #define OMV_CSI_I2C_ID (1)
+// #define OMV_CSI_I2C_SPEED (OMV_I2C_SPEED_STANDARD)
+
+/* ---------------------------------- 修改部分 ---------------------------------- */
+// OV2640摄像头使用I2C2总线（PB10=SCL, PB11=SDA）
+#define OMV_CSI_I2C_ID (2)
 #define OMV_CSI_I2C_SPEED (OMV_I2C_SPEED_STANDARD)
 
 // FIR I2C bus
@@ -222,21 +227,40 @@
 #define OMV_CSI_DMA_MEMCPY_ENABLE (1)
 #define OMV_CSI_HW_CROP_ENABLE (1)
 
-#define OMV_CSI_D0_PIN (&omv_pin_C6_DCMI)
-#define OMV_CSI_D1_PIN (&omv_pin_C7_DCMI)
-#define OMV_CSI_D2_PIN (&omv_pin_E0_DCMI)
-#define OMV_CSI_D3_PIN (&omv_pin_E1_DCMI)
-#define OMV_CSI_D4_PIN (&omv_pin_E4_DCMI)
-#define OMV_CSI_D5_PIN (&omv_pin_B6_DCMI)
-#define OMV_CSI_D6_PIN (&omv_pin_E5_DCMI)
-#define OMV_CSI_D7_PIN (&omv_pin_E6_DCMI)
+// 原有CSI引脚配置（注释掉）
+// #define OMV_CSI_D0_PIN (&omv_pin_C6_DCMI)
+// #define OMV_CSI_D1_PIN (&omv_pin_C7_DCMI)
+// #define OMV_CSI_D2_PIN (&omv_pin_E0_DCMI)
+// #define OMV_CSI_D3_PIN (&omv_pin_E1_DCMI)
+// #define OMV_CSI_D4_PIN (&omv_pin_E4_DCMI)
+// #define OMV_CSI_D5_PIN (&omv_pin_B6_DCMI)
+// #define OMV_CSI_D6_PIN (&omv_pin_E5_DCMI)
+// #define OMV_CSI_D7_PIN (&omv_pin_E6_DCMI)
 
-#define OMV_CSI_HSYNC_PIN (&omv_pin_A4_DCMI)
-#define OMV_CSI_VSYNC_PIN (&omv_pin_B7_DCMI)
-#define OMV_CSI_PXCLK_PIN (&omv_pin_A6_DCMI)
-#define OMV_CSI_RESET_PIN (&omv_pin_A10_GPIO)
-#define OMV_CSI_POWER_PIN (&omv_pin_D7_GPIO)
-#define OMV_CSI_FSYNC_PIN (&omv_pin_B4_GPIO)
+// #define OMV_CSI_HSYNC_PIN (&omv_pin_A4_DCMI)
+// #define OMV_CSI_VSYNC_PIN (&omv_pin_B7_DCMI)
+// #define OMV_CSI_PXCLK_PIN (&omv_pin_A6_DCMI)
+// #define OMV_CSI_RESET_PIN (&omv_pin_A10_GPIO)
+// #define OMV_CSI_POWER_PIN (&omv_pin_D7_GPIO)
+// #define OMV_CSI_FSYNC_PIN (&omv_pin_B4_GPIO)
+
+/* ---------------------------------- 修改部分 ---------------------------------- */
+// OV2640摄像头引脚配置
+#define OMV_CSI_D0_PIN (&omv_pin_C6_DCMI) // OV Y2
+#define OMV_CSI_D1_PIN (&omv_pin_C7_DCMI) // OV Y3
+#define OMV_CSI_D2_PIN (&omv_pin_E0_DCMI) // OV Y4
+#define OMV_CSI_D3_PIN (&omv_pin_E1_DCMI) // OV Y5
+#define OMV_CSI_D4_PIN (&omv_pin_E4_DCMI) // OV Y6
+#define OMV_CSI_D5_PIN (&omv_pin_D3_DCMI) // OV Y7
+#define OMV_CSI_D6_PIN (&omv_pin_E5_DCMI) // OV Y8
+#define OMV_CSI_D7_PIN (&omv_pin_E6_DCMI) // OV Y9
+
+#define OMV_CSI_HSYNC_PIN (&omv_pin_A4_DCMI)  // OV HREF
+#define OMV_CSI_VSYNC_PIN (&omv_pin_B7_DCMI)  // OV VSYNC
+#define OMV_CSI_PXCLK_PIN (&omv_pin_A6_DCMI)  // OV PCLK
+#define OMV_CSI_RESET_PIN (&omv_pin_A10_GPIO) // 保持原有配置（硬件重置）
+#define OMV_CSI_POWER_PIN (&omv_pin_E3_GPIO)  // OV PWDN
+#define OMV_CSI_FSYNC_PIN (&omv_pin_C0_GPIO)  // STROBE
 
 // Physical I2C buses.
 
