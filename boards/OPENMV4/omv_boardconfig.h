@@ -199,10 +199,12 @@
 #define OMV_FIR_I2C_ID (2)
 #define OMV_FIR_I2C_SPEED (OMV_I2C_SPEED_FULL)
 
-// Soft I2C bus
-#define OMV_SOFT_I2C_SIOC_PIN (&omv_pin_B10_GPIO)
-#define OMV_SOFT_I2C_SIOD_PIN (&omv_pin_B11_GPIO)
-#define OMV_SOFT_I2C_SPIN_DELAY 64
+// Soft I2C bus - 禁用以避免引脚冲突
+// 原配置: PB10/PB11现在专门用于摄像头硬件I2C
+// 软件I2C功能已禁用，如需要可使用硬件I2C总线
+// #define OMV_SOFT_I2C_SIOC_PIN (&omv_pin_A5_GPIO)
+// #define OMV_SOFT_I2C_SIOD_PIN (&omv_pin_A10_GPIO)
+// #define OMV_SOFT_I2C_SPIN_DELAY 64
 
 // CSI SPI bus
 #define OMV_CSI_SPI_ID (3)
